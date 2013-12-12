@@ -1,2 +1,14 @@
 <h1>THE DATA</h1>
-<%= @data.inspect %>
+<%= @data[0].inspect %>
+<br/>
+<%#= @data[0]["lat"].inspect %>
+<br/>
+<%#= @data[0]["lng"].inspect %>
+<br/>
+<% @locations = [] %>
+<% @locations = @data.map do |element|%>
+<%  	@locations << [element["address"], element["lat"], element["lng"]]%>
+<%  	end   %>
+<%= @locations.inspect %>
+
+
